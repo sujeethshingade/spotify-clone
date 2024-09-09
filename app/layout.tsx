@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {Figtree} from 'next/font/google'
+import { Figtree } from 'next/font/google'
+import Sidebar from "@/components/Sidebar";
 
-const font = Figtree({subsets:['latin']})
+const font = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Spotify Clone",
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body
         className={`${font.className} ${font.className} antialiased`}
       >
-        {children}
+        <Sidebar>
+          {children}
+        </Sidebar>
       </body>
     </html>
   );
